@@ -1,0 +1,18 @@
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+navbar-back-yellow{
+    background-color: #f9cc29;
+}
+
+.logged-in {
+    color: green;
+  }
+  
+  .logged-out {
+    color: red;
+  }
+  footer a{
+      color: black;
+      text-decoration: underline;
+  }
