@@ -1,9 +1,9 @@
 # FREE Site Status Page
-Are you looking for status page for your site/sites? Many times we need to check if our site is working properly or not, So I developed this tools , You can easliy host it on GitHub Pages and by just making few changes you can create status page for your website & as it is hosted on GitHub pages, it is completely free to use. You can check Example here [Status Page JustInClicks.com](https://status.justinclicks.com)
+Are you looking for status page for your site/sites? Many times we need to check if our site is working properly or not, So I developed this tool, You can easily host it on GitHub Pages and by just making few changes you can create status page for your website & as it is hosted on GitHub pages, it is completely free to use. You can check Example here [Status Page JustInClicks.com](https://status.justinclicks.com)
 
-## How to Create Status Page for you?   
+## How to Create Status Page for your site?   
 * To create status Page first fork [this](https://github.com/kaustubhk24/FREE-Site-Status-Page) repository.
-* Go to repository setting and turn of GitHub pages option.
+* Go to repository setting and turn on GitHub pages option.
 * In Next Step open file named `CNAME` & remove text `status.justinclicks.com` and enter your custom URL. e.g. `status.example.com`
 * From repo settings enable tick on `SSL` & update records respectively in your domain `DNS settings`.
 * Last step is to open `main.js` & you will see code below, you just need to add your sites there.

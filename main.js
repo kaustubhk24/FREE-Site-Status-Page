@@ -47,7 +47,7 @@ sites=[
 /*** 
  * Some Required functions Starts here
  */
-
+var nightVal=true;
  var loader=document.getElementById("loader");
  var innerHTML="";
 var isLive=document.getElementById("islive");
@@ -110,13 +110,13 @@ function onSuccess(timeTotal) {
     ServerStatus.innerHTML="Time Taken to connect: " + timeTotal;
     isLive.innerHTML="Site is Live "+"<span class='logged-in'>●</span>";
     innerHTML+="<br>";
-    innerHTML+="<div class=card>";
+    innerHTML+="<div class='card'>";
     innerHTML+="<div class=card-header>"+site;
     innerHTML+="</div>";
     innerHTML+="<div class=card-body>";
     innerHTML+="<h5 class=card-title>"+isLive.innerHTML+"</h5>";
     innerHTML+="<p class=card-text>"+ServerStatus.innerHTML+"</p>";
-    innerHTML+="<a target=_blank href="+url+" class='btn btn-primary'>Visit</a>";
+    innerHTML+="<a target=_blank href="+url+" class='btn btn-warning'>Visit</a>";
     innerHTML+=" </div>  </div>";
 
 loader.innerHTML=innerHTML;
@@ -132,7 +132,7 @@ function onFail() {
     innerHTML+="<div class=card-body>";
     innerHTML+="<h5 class=card-title>"+isLive.innerHTML+"</h5>";
     innerHTML+="<p class=card-text>"+ServerStatus.innerHTML+"</p>";
-    innerHTML+="<a target=_blank href="+url+" class='btn btn-primary'>Visit</a>";
+    innerHTML+="<a target=_blank href="+url+" class='btn btn-warning' >Visit</a>";
     innerHTML+=" </div>  </div>";
     console.clear();
     loader.innerHTML=innerHTML;
@@ -156,15 +156,60 @@ for(var i=0;i<sites.length;i++)
 } 
 
 
+/***
+ * 
+ * Night Mode
+ */
+nightVal(true)
+
+function night(nightVal)
+{
+    if(!nightVal)
+    {
+        var element = document.body;
+  element.classList.toggle("dark-body");
+
+
+var nav=document.getElementById("nav");
+nav.classList.toggle("dark-nav");
+
+var ftr=document.getElementById("ftr");
+ftr.classList.toggle("dark-nav");
+
+var navbtn=document.getElementById("navbtn");
+navbtn.classList.toggle("dark-nav-btn");
+
+  
+  var buttons = document.getElementsByClassName('btn');
+  for (let i = 0; i < buttons.length; i++) {
+    let btn = buttons[i];
+    btn.classList.toggle('dark-btn');
+
+}
 
 
 
+var clss = document.getElementsByClassName('card');
+for (let ic = 0; ic < clss.length; ic++) {
+  let cls = clss[ic];
+  cls.classList.toggle('dark-card');
+
+}
 
 
 
+var crdhdr = document.getElementsByClassName('card-header');
+for (let ic1 = 0; ic1 < crdhdr.length; ic1++) {
+  let crd = crdhdr[ic1];
+  crd.classList.toggle('dark-card-header');
+
+}}}
 
 
-
+/***
+ * 
+ * Night Mode
+ */
 
 
 
