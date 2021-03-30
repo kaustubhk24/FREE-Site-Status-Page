@@ -23,7 +23,27 @@ sites=[
 
 * Now at the place of `site_name` you have to enter your site Title & in `site_url` enter exact URL of your site with `http or https` properly.
 * Make sure you haven't kept any previous site name, just remove all of them & add yours
+* Now create file in `incidents/` folder with site name for example if your site name is `Example Site` in `main.js` then your file name will be `Example Site.json`, Do not remove spaces or anything , use exact site name from `main.js` & keep file in `incidents/` folder .
+* To report incident open your site file from `incidents/` folder, & copy content below there
+```
+[
+    {
+        "incident_name":"incident_name at time",
+        "description":"description"
+    },
+    {
+        "incident_name":"incident_name 2 at time",
+        "description":"description 2"
+    }
+]
+
+```
+* Make changes according to your requirements, that's it
 * Done ! Once GitHub Build pages your site status page will be Live.
+
+## Issues 
+* See Known [Issues here](https://github.com/kaustubhk24/Indian-Banks-Data/issues)
+* Create New [Issue here](https://github.com/kaustubhk24/Indian-Banks-Data/issues/new)
 
 
 ## Disclaimer

@@ -48,3 +48,8 @@ color: white !important;
   {
       background-color:  rgb(34, 27, 27);
   }
+  #ftr{
+    position: fixed ;
+    bottom: 0;
+    width: 100%;
+}

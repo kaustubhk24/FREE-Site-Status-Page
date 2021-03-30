@@ -1,8 +1,3 @@
-var url_string = window.url;
-var url = new URL(url_string);
-var c = url.searchParams.get("n");
-window.alert(c);
-
 
 
 
@@ -11,7 +6,7 @@ window.alert(c);
  * 
  * Night Mode
  */
- nightVal(true)
+ night(true)
 
  function night(nightVal)
  {
