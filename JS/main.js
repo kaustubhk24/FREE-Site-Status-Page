@@ -7,36 +7,15 @@
 
 sites=[
     {
-        'site_name':'JustInClicks.com',
-        'site_url':'https://www.justinclicks.com/'
+        'site_name':'site.example1.com',
+        'site_url':'https://www.site.example1.com'
     },
     
     {
-        'site_name':'IFSC Bank API',
-        'site_url':'https://bank-apis.justinclicks.com/'
-    },
-    {
-        'site_name':'Docs JustInClicks.com',
-        'site_url':'https://docs.justinclicks.com/'
-    },
-
-    {
-        'site_name':'App JustInClicks.com',
-        'site_url':'https://apps.justinclicks.com/'
-    },
-    {
-        'site_name':'Bill JustInClicks.com',
-        'site_url':'https://bill.justinclicks.com/'
-    },
-
-    {
-        'site_name':'CDN JustInClicks.com',
-        'site_url':'https://icons.justinclicks.com/'
-    },
-    {
-        'site_name':'Licensing',
-        'site_url':'https://licensing.justinclicks.com/'
+        'site_name':'Site 2 Example',
+        'site_url':'https://site2.example1.com/'
     }
+   
 ]
 
 /***
