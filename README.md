@@ -42,8 +42,8 @@ sites=[
 * Done ! Once GitHub Build pages your site status page will be Live.
 
 ## Issues 
-* See Known [Issues here](https://github.com/kaustubhk24/Indian-Banks-Data/issues)
-* Create New [Issue here](https://github.com/kaustubhk24/Indian-Banks-Data/issues/new)
+* See Known [Issues here](https://github.com/kaustubhk24/FREE-Site-Status-Page/issues)
+* Create New [Issue here](https://github.com/kaustubhk24/FREE-Site-Status-Page/issues/new)
 
 
 ## Disclaimer
