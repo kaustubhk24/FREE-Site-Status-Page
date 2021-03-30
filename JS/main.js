@@ -5,17 +5,17 @@
  * 
  */
 
-sites = [
+sites=[
     {
-        'site_name': 'site.example1.com',
-        'site_url': 'https://www.site.example1.com'
+        'site_name':'site.example1.com',
+        'site_url':'https://www.site.example1.com'
     },
-
+    
     {
-        'site_name': 'Site 2 Example',
-        'site_url': 'https://site2.example1.com/'
+        'site_name':'Site 2 Example',
+        'site_url':'https://site2.example1.com/'
     }
-
+   
 ]
 
 /***
@@ -26,99 +26,101 @@ sites = [
 /*** 
  * Some Required functions Starts here
  */
-var nightVal = true;
-var loader = document.getElementById("loader");
-var innerHTML = "";
-var isLive = document.getElementById("islive");
-var ServerStatus = document.getElementById("ServerStatus");
+var nightVal=true;
+ var loader=document.getElementById("loader");
+ var innerHTML="";
+var isLive=document.getElementById("islive");
+var ServerStatus =document.getElementById("ServerStatus");
 
-function checkIfSiteIsLive(url, loader, site, i) {
+function checkIfSiteIsLive(url,loader,site,i)
+{
     var address = url;
 
-    var t1 = Date.now();
-    var t2;
+var t1 = Date.now();
+var t2;
 
-    var max = 100000;
-    var failed = false;
+var max = 100000;
+var failed = false;
 
-    var httpReq = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-    if (httpReq == null) {
-        console.log("Error: XMLHttpRequest failed to initiate.");
-    }
-    httpReq.onreadystatechange = function () {
+var httpReq = (window.XMLHttpRequest)?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+if(httpReq == null) {
+    console.log("Error: XMLHttpRequest failed to initiate.");
+}
+httpReq.onreadystatechange = function() {
 
-        var failTimer = setTimeout(function () {
-            failed = true;
-            httpReq.abort();
-        }, max);
+    var failTimer = setTimeout(function() {
+                               failed = true;
+                               httpReq.abort();
+                               }, max);
 
-        if (httpReq.readyState == 4) {  //Completed loading
-            if (!failed && (httpReq.status == 200 || httpReq.status == 0)) {
+    if (httpReq.readyState == 4) {  //Completed loading
+        if (!failed && (httpReq.status == 200 || httpReq.status == 0)) {
 
-                clearTimeout(failTimer);
+            clearTimeout(failTimer);
 
-                t2 = Date.now();
+            t2 = Date.now();
 
-                var timeTotal = (t2 - t1);
-                if (timeTotal > max) {
-                    onFail();
-                } else {
-                    onSuccess(timeTotal);
-                }
-
-            }
-            else {  //Otherwise, there was a problem while loading
-                console.log("Error " + httpReq.status + " has occurred.");
+            var timeTotal = (t2 - t1);
+            if(timeTotal > max) {
                 onFail();
+            } else {
+                onSuccess(timeTotal);
             }
+
+        }
+        else {  //Otherwise, there was a problem while loading
+            console.log("Error " + httpReq.status + " has occurred.");
+            onFail();
         }
     }
-    try {
-        httpReq.open("GET", address, true);
-        httpReq.send(null);
+}
+try {
+    httpReq.open("GET", address, true);
+    httpReq.send(null);
 
-    } catch (e) {
-        console.log("Error retrieving data httpReq. Some browsers only accept cross-domain request with HTTP.");
-        onFail();
-    }
+} catch(e) {
+    console.log("Error retrieving data httpReq. Some browsers only accept cross-domain request with HTTP.");
+    onFail();
+}
 
 
-    function onSuccess(timeTotal) {
+function onSuccess(timeTotal) {
 
-        ServerStatus.innerHTML = "Time Taken to connect: " + timeTotal;
-        isLive.innerHTML = "Site is Live " + "<span class='logged-in'>●</span>";
-        innerHTML += "<br>";
-        innerHTML += "<div class='card'>";
-        innerHTML += "<div class=card-header>" + site;
-        innerHTML += "</div>";
-        innerHTML += "<div class=card-body>";
-        innerHTML += "<h5 class=card-title>" + isLive.innerHTML + "</h5>";
-        innerHTML += "<p class=card-text>" + ServerStatus.innerHTML + "</p>";
-        innerHTML += "<a target=_blank href=" + url + "  class='btn btn-warning'>Visit</a> &nbsp;";
-        innerHTML += "<a target=_blank href=incident.html?n=" + encodeURI(site) + "  class=''>See Reported Incident</a>";
+    ServerStatus.innerHTML="Time Taken to connect: " + timeTotal;
+    isLive.innerHTML="Site is Live "+"<span class='logged-in'>●</span>";
+    innerHTML+="<br>";
+    innerHTML+="<div class='card'>";
+    innerHTML+="<div class=card-header>"+site;
+    innerHTML+="</div>";
+    innerHTML+="<div class=card-body>";
+    innerHTML+="<h5 class=card-title>"+isLive.innerHTML+"</h5>";
+    innerHTML+="<p class=card-text>"+ServerStatus.innerHTML+"</p>";
+    innerHTML+="<a target=_blank href="+url+"  class='btn btn-warning'>Visit</a> &nbsp;";
+    innerHTML+="<a target=_blank href=incident.html?n="+encodeURI(site)+"  class=''>See Reported Incident</a>";
 
-        innerHTML += " </div>  </div>";
+    innerHTML+=" </div>  </div>";
 
-        loader.innerHTML = innerHTML;
+loader.innerHTML=innerHTML;
 
-    }
-    function onFail() {
-        isLive.innerHTML = "Site is Down " + "<span class='logged-out'>●</span>";
-        ServerStatus.innerHTML = "Site seems to be unavailable right now";
-        innerHTML += "<br>";
-        innerHTML += "<div class=card>";
-        innerHTML += "<div class=card-header>" + site;
-        innerHTML += "</div>";
-        innerHTML += "<div class=card-body>";
-        innerHTML += "<h5 class=card-title>" + isLive.innerHTML + "</h5>";
-        innerHTML += "<p class=card-text>" + ServerStatus.innerHTML + "</p>";
-        innerHTML += "<a target=_blank href=" + url + " class='btn btn-warning'>Visit</a> &nbsp;";
-        innerHTML += "<a target=_blank href=incident.html?n=" + encodeURI(site) + "  class=''>See Reported Incident</a>";
+}
+function onFail() {
+    isLive.innerHTML="Site is Down "+"<span class='logged-out'>●</span>";
+    ServerStatus.innerHTML="Site seems to be unavailable right now";
+    innerHTML+="<br>";
+    innerHTML+="<div class=card>";
+    innerHTML+="<div class=card-header>"+site;
+    innerHTML+="</div>";
+    innerHTML+="<div class=card-body>";
+    innerHTML+="<h5 class=card-title>"+isLive.innerHTML+"</h5>";
+    innerHTML+="<p class=card-text>"+ServerStatus.innerHTML+"</p>";
+    innerHTML+="<a target=_blank href="+url+" class='btn btn-warning'>Visit</a> &nbsp;";
+    innerHTML+="<a target=_blank href=incident.html?n="+encodeURI(site)+"  class=''>See Reported Incident</a>";
 
-        innerHTML += " </div>  </div>";
-        loader.innerHTML = innerHTML;
+    innerHTML+=" </div>  </div>";
+    console.clear();
+    loader.innerHTML=innerHTML;
 
-    }
+}
 
 }
 
@@ -129,11 +131,62 @@ function checkIfSiteIsLive(url, loader, site, i) {
 
 
 
-for (var i = 0; i < sites.length; i++) {
+for(var i=0;i<sites.length;i++)
+{  
 
-    checkIfSiteIsLive(sites[i]['site_url'], loader, sites[i]['site_name'], i,);
+    checkIfSiteIsLive(sites[i]['site_url'],loader,sites[i]['site_name'],i,);
+  
+} 
+
+
+/***
+ * 
+ * Night Mode
+ */
+nightVal(true)
+
+function night(nightVal)
+{
+    if(!nightVal)
+    {
+        var element = document.body;
+  element.classList.toggle("dark-body");
+
+
+var nav=document.getElementById("nav");
+nav.classList.toggle("dark-nav");
+
+var ftr=document.getElementById("ftr");
+ftr.classList.toggle("dark-nav");
+
+var navbtn=document.getElementById("navbtn");
+navbtn.classList.toggle("dark-nav-btn");
+
+  
+  var buttons = document.getElementsByClassName('btn');
+  for (let i = 0; i < buttons.length; i++) {
+    let btn = buttons[i];
+    btn.classList.toggle('dark-btn');
 
 }
+
+
+
+var clss = document.getElementsByClassName('card');
+for (let ic = 0; ic < clss.length; ic++) {
+  let cls = clss[ic];
+  cls.classList.toggle('dark-card');
+
+}
+
+
+
+var crdhdr = document.getElementsByClassName('card-header');
+for (let ic1 = 0; ic1 < crdhdr.length; ic1++) {
+  let crd = crdhdr[ic1];
+  crd.classList.toggle('dark-card-header');
+
+}}}
 
 
 /***
@@ -141,50 +194,8 @@ for (var i = 0; i < sites.length; i++) {
  * Night Mode
  */
 
-function night() {
-
-    var nightVal = localStorage.nightMode;
-
-    if (nightVal) {
-
-        localStorage.nightMode=!nightVal;
-
-        var element = document.body;element.classList.toggle("dark-body");
-        var nav = document.getElementById("nav");nav.classList.toggle("dark-nav");
-        var ftr = document.getElementById("ftr");ftr.classList.toggle("dark-nav");
-        var navbtn = document.getElementById("navbtn");navbtn.classList.toggle("dark-nav-btn");
-        var buttons = document.getElementsByClassName('btn');
-        for (let i = 0; i < buttons.length; i++) {let btn = buttons[i];btn.classList.toggle('dark-btn');}
-        var clss = document.getElementsByClassName('card');
-        for (let ic = 0; ic < clss.length; ic++) {let cls = clss[ic];cls.classList.toggle('dark-card');}
-        var crdhdr = document.getElementsByClassName('card-header');for (let ic1 = 0; ic1 < crdhdr.length; ic1++) {let crd = crdhdr[ic1];crd.classList.toggle('dark-card-header');}
-
-    }
-    else {
-
-        localStorage.nightMode = true;
-        var element = document.body;element.classList.remove("dark-body");
-        var nav = document.getElementById("nav");nav.classList.remove("dark-nav");
-        var ftr = document.getElementById("ftr");ftr.classList.remove("dark-nav");
-        var navbtn = document.getElementById("navbtn");navbtn.classList.remove("dark-nav-btn");
-        var buttons = document.getElementsByClassName('btn');
-        for (let i = 0; i < buttons.length; i++) {let btn = buttons[i];btn.classList.remove('dark-btn');}
-        var clss = document.getElementsByClassName('card');
-        for (let ic = 0; ic < clss.length; ic++) {let cls = clss[ic];cls.classList.remove('dark-card');}
-        var crdhdr = document.getElementsByClassName('card-header');for (let ic1 = 0; ic1 < crdhdr.length; ic1++) {let crd = crdhdr[ic1];crd.classList.remove('dark-card-header');}
 
 
-
-    }
-
-
-}
-
-
-/***
- *
- * Night Mode
- */
 
 
 
