@@ -50,9 +50,9 @@ sites=[
 
 
 
-|   |   |   |   |   |
-|---|---|---|---|---|
-| ![Status Page](imgs\status-page.gif "Status Page")  | ![Incidents Page](imgs/status-page-incidents.gif "Incidents Page")  
+|   |   |
+|---|---|
+| ![Status Page](imgs/status-page.gif "Status Page")  | ![Incidents Page](imgs/status-page-incidents.gif "Incidents Page")  |
 
 
 
