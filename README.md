@@ -1,6 +1,6 @@
 # FREE Site Status Page
 Are you looking for status page for your site/sites? Many times we need to check if our site is working properly or not, So I developed this tool, You can easily host it on GitHub Pages and by just making few changes you can create status page for your website & as it is hosted on GitHub pages, it is completely free to use. You can check Example here [Status Page JustInClicks.com](https://status.justinclicks.com) </br>
-See [App Preview](https://kaustubhk24.github.io/FREE-Site-Status-Page/)
+See [Live App Preview](https://kaustubhk24.github.io/FREE-Site-Status-Page/)
 
 ## How to Create Status Page for your site?   
 * To create status Page first fork [this](https://github.com/kaustubhk24/FREE-Site-Status-Page) repository.
@@ -46,6 +46,15 @@ sites=[
 * See Known [Issues here](https://github.com/kaustubhk24/FREE-Site-Status-Page/issues)
 * Create New [Issue here](https://github.com/kaustubhk24/FREE-Site-Status-Page/issues/new)
 
+## Screenshots
+
+
+
+|   |   |   |   |   |
+|---|---|---|---|---|
+| ![Status Page](imgs\status-page.gif "Status Page")  | ![Incidents Page](imgs/status-page-incidents.gif "Incidents Page")  
+
+
 
 ## Disclaimer
 We have tried our best to keep the code bug free, users are requested to confirm information with their sites before using the information provided. The author reserves the right not to be responsible for the topicality, correctness, completeness or quality of the information provided. Liability claims regarding damage caused by the use of any information provided, including any kind of information which is incomplete or incorrect, will therefore be rejected.
@@ -56,4 +65,4 @@ You are free to download / modify / sell code but with terms below but not limit
 * You can not add your footer credits
 * You should remove `JustInClicks` links from `main.js` files, you should keep only your links
 * All use and/or publication rights are reserved worldwide.
-* Copyrights &copy; 2021 Kaustubh Kulkarni { [kaustubhk24](https://github.com/kaustubhk24/) }
+* Copyrights &copy; 2021 Kaustubh Kulkarni { [Kaustubhk24](https://github.com/kaustubhk24/) }
