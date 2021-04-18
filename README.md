@@ -46,7 +46,7 @@ sites=[
 * See Known [Issues here](https://github.com/kaustubhk24/FREE-Site-Status-Page/issues)
 * Create New [Issue here](https://github.com/kaustubhk24/FREE-Site-Status-Page/issues/new)
 
-## Screenshots
+## Live Preview GIF
 
 
 
